@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="src/assets/vue.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UAS PBK</title>
+  </head>
+  <body>
+    <div id="app">
+      <router-view></router-view>
+    </div>
+    <script>
+      const TodoView = { template: "<div>Todo View</div>" };
+      const PostView = { template: "<div>Post View</div>" };
+
+      const routes = [
+        { path: "/", component: TodoView },
+        { path: "/post", component: PostView },
+      ];
+
+      const router = new VueRouter({
+        routes,
+      });
+
+      new Vue({
+        el: "#app",
+        router,
+      });
+    </script>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
